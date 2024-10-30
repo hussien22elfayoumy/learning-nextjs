@@ -1,3 +1,4 @@
+import NewTodoForm from '@/components/NewTodoForm';
 import React, { ReactNode } from 'react';
 
 export default function DashboardLayout({
@@ -8,6 +9,7 @@ export default function DashboardLayout({
   return (
     <>
       <h1>Dashboard</h1>
+      <NewTodoForm />
       <div>{children}</div>
     </>
   );
