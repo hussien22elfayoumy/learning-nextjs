@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import Link from 'next/link';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -12,6 +13,12 @@ const geistMono = localFont({
   variable: '--font-geist-mono',
   weight: '100 900',
 });
+
+const links = [
+  { href: '/', name: 'Home' },
+  { href: '/docs', name: 'Docs' },
+  { href: '/todos', name: 'Todos' },
+];
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -28,6 +35,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav>
+          <ul className='flex items-center gap-2'>
+            {links.map((link) => (
+              <li key={link.name}>
+                <Link href={link.href}>{link.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
         {children}
       </body>
     </html>
