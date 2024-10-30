@@ -1,3 +1,9 @@
+import NewTodoForm from '@/components/NewTodoForm';
+
 export default function Home() {
-  return <h1>Home</h1>;
+  return (
+    <div>
+      <NewTodoForm />
+    </div>
+  );
 }
